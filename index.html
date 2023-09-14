@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CourseWish</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body onload="myFunction()">
+  <!-- loader start -->
+  <div id="loading"></div>
+  <!-- loader end -->
+
+  <!-- navbar start -->
+  <div class="container-fluid"></div>
+  <header>
+    <a href="#" class="logo">CourseWish</a>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="menu">Menu</label>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#Home" class="nav-link">Home</a></li>
+        <li><a href="#Course" class="nav-link">Courses</a></li>
+        <li><a href="#Master" class="nav-link">Online MasterDegree</a></li>
+        <li><a href="#About" class="nav-link">About Us</a></li>
+        <li><a href="#Team" class="nav-link">Our Team</a></li>
+        <li><a href="#Contact" class="nav-link">Contact</a></li>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aa"
+          style="margin-left: 24px;margin-top: 14px;">Login</button>
+      </ul>
+    </nav>
+  </header>
+  </div>
+  <!-- navbar end -->
+
+  <!-- image slider start -->
+  <section class="home" id="Home">
+    <div class="container-fluid">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+
+          <img
+            src="data:image/jpeg;base64,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"
+            style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+
+          <img
+            src="https://media.istockphoto.com/id/1349561701/video/4k-data-science-animated-tag-word-cloud-text-design-animation-seamless-loop.jpg?s=640x640&k=20&c=ynREPerZ-1ScYbVIFXq4eG5tq-mp343rAzwoQoRlhe0="
+            style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1kNAJLSsov-dPpqeFUshB_vfXg0GHls1AITtU-R_IabYcLBQzuXwPkMV-EXesyuNNw14&usqp=CAU"
+            style="width:100%">
+
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+
+    </div>
+  </section>
+  <!-- image slider end -->
+
+  <!-- course start -->
+  <section class="Course" id="Course">
+    <div class="container-fluid">
+      <div class="container">
+
+        <h1 class="heading">our Courses</h1>
+
+        <div class="box-container">
+
+          <div class="box">
+            <img src="icon-1.png" alt="">
+            <h3>HTML 5</h3>
+            <p>HTML is abbreviated as HyperText Markup Language, hypertext stands for the link between web pages, and
+              markup language stands for the text between tags. It is a standard markup language to design documents
+              displayed..</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-2.png" alt="">
+            <h3>CSS 3</h3>
+            <p>Cascading Style Sheets (CSS) is a sheet styling language that specifies the presentation of a document
+              written in a markup language like HTML. A style sheet consists of rules that tell a web browser how to
+              display a document written in HTML </p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-3.png" alt="">
+            <h3>JavaScript</h3>
+            <p>This JavaScript in Hindi Course will teach you the hands-on implementation of JavaScript concepts in
+              Hindi. Here, you will learn JavaScript, which includes different ways where we can write. This free course
+              contains...</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-4.png" alt="">
+            <h3>NodeJs</h3>
+            <p>you will understand everything about "NodeJS". You will start from installation followed by your first
+              NodeJS program. After that, you will learn how to run your programs without saving your files. This course
+              includes declaring variables.</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-5.png" alt="">
+            <h3>Angular</h3>
+            <p>This free Angular course helps you get familiar with the updated skills. You will learn about the
+              upgradation done from Angular JS to Angular7 and understand their benefits. You will learn and understand
+              the new updates made to Angular7 for a better coding experience.</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-6.png" alt="">
+            <h3>React.js</h3>
+            <p>Learn React, an efficient JavaScript library, through this free React JS course that helps you build user
+              interfaces hassle-free. In order to understand React, you must have some prior knowledge of HTML, CSS, and
+              Javascript.Thus, this React JS course starts by providing....</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-7.png" alt="">
+            <h3>SQL</h3>
+            <p>MySQL is a tool that is an open-source relational database management system that organizes the data into
+              one or more tables where data types are related to each other. These relations help to structure the data
+              in the tables. Structured Query Language...</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box">
+            <img src="icon-8.png" alt="">
+            <h3>MongoDB</h3>
+            <p>MongoDB is a powerful document-oriented database system, and this course helps you learn MongoDB basics.
+              This MongoDB for beginners course introduces you to it and helps you understand NoSQL and its need in
+              DBMS. You will learn about the SQL and NoSQL....</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- course end -->
+  <!-- master degreee -->
+  <section class="master" id="Master">
+    <div class="container-fluid">
+      <div class="container">
+        <h1 class="heading">Master Degree programs</h1>
+
+        <div class="box-container">
+
+          <div class="box1">
+            <img
+              src="https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/page-banners/home/univ-banners/great-lakes.jpg"
+              alt="">
+            <h3>Post Graduate Diploma in Management (Online)</h3>
+            <p>The cutting-edge curriculum of the Online Post Graduate Diploma in Management is a blended combination of
+              live virtual classes, recorded lectures, and hands-on experience with guidance from industry experts. This
+              2-year online program has an industry focussed curriculum taught in a flexible format.</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+          <div class="box1">
+            <img src="https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/page-banners/home/univ-banners/iiith.jpg"
+              alt="">
+            <h3>IIIT Hyderabad: Post Graduate Certificate in Software Engineering for Data Science</h3>
+            <p>The program enables participants to gain an in-depth understanding of data science and software systems
+              that are widely used by companies. It takes a very practical approach to impart industry-relevant skills,
+              and enables participants to become job-ready.</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+          <div class="box1">
+            <img
+              src="https://d1vwxdpzbgdqj.cloudfront.net/s3-public-images/page-banners/home/univ-banners/ut-austin.jpg"
+              alt="">
+            <h3>PGP - Artificial Intelligence & Machine Learning</h3>
+            <p>This bootcamp serves as a training module for learners with limited or no programming exposure to enable
+              them to be at par with other learners with prior programming knowledge before the course commencement.
+              This is an optional but open to all module. More than 1000 Learners have used this successfully....</p>
+            <a href="#" class="btn">read more</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- master degree end -->
+  <!-- about start -->
+  <section class="hero" id="About">
+    <div class="container-fluid">
+      <div class="heading">
+        <h1>About Us</h1>
+      </div>
+      <div class="container1">
+        <div class="hero-content">
+          <h2>Welcome to the CourseWish</h2>
+          <p>Welcome to CourseWish, your ultimate destination for unlocking a world of knowledge and skills! At
+            CourseWish, we believe that learning is a lifelong journey, and our mission is to make it easier and more
+            enjoyable for you to pursue your educational aspirations. <br> <br> With CourseWish, you gain access to a
+            diverse catalog of courses covering a wide range of subjects, from technology and business to arts and
+            sciences. Our platform brings together top educators, industry experts, and institutions to provide you with
+            high-quality learning experiences. You can explore courses, tutorials, and guides that cater to learners of
+            all levels, whether you're a beginner or an expert seeking to deepen your knowledge.</p>
+          <button class="cta-button">Learn More</button>
+        </div>
+        <div class="hero-image">
+          <img src="coursewish-logo.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about end -->
+  <!-- Our team start-->
+  <section class="Team" id="Team">
+    <div class="container-fluid">
+      <div class="container text-center py-5">
+        <h2 class="text-white" style="font-size: 49px; font-weight: 600;">Our Team</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+          <div class="col">
+            <div class="card">
+              <img src="man.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Arjun Bhadoria</h3>
+                <p class="text-muted">CEO co-founder</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="man1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Mukesh kumar</h3>
+                <p class="text-muted">co-founder</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="woman.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Bhawika Gangwani</h3>
+                <p class="text-muted">Technology</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="gamer.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Divyanshu Shrivastava</h3>
+                <p class="text-muted">Content & Growth</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="woman1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Shristy Bhadoria</h3>
+                <p class="text-muted">Chief Marketing Officer</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="human.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h3 class="card-title">Ridhima Sarkar</h3>
+                <p class="text-muted">New Product Development</p>
+
+              </div>
+              <div class="d-flex justify-content-evenly">
+                <i class="bi bi-linkedin"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-envelope-check-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Our team end -->
+  <!-- Contact start -->
+  <section class="contact" id="Contact">
+    <div class="container-fluid">
+      <footer class="text-center text-white">
+
+        <div class="container pt-4">
+
+          <section class="mb-4">
+            <!-- Facebook -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-facebook"></i>
+            </a>
+
+            <!-- Twitter -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-twitter"></i></a>
+
+            <!-- Google -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-google"></i></a>
+
+            <!-- Instagram -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-instagram"></i></a>
+
+            <!-- Linkedin -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-linkedin"></i></a>
+            <!-- Github -->
+            <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+              data-mdb-ripple-color="dark"><i class="bi bi-github"></i></a>
+          </section>
+
+        </div>
+
+
+
+        <div class="text-center text-dark p-3">
+          © 2023 Copyright:
+          <a class="text-dark" href="#" id="Home">CourseWish.com</a>
+        </div>
+
+      </footer>
+    </div>
+  </section>
+  <!-- contact end -->
+  <!-- Signup start -->
+  <div class="modal fade" id="aa">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Login Form</h5>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label>Username</label>
+              <input type="text" name="" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label>Password</label>
+              <input type="password" name="" class="form-control">
+            </div>
+            <button class="btn" style="background-color: blue; color: white;">Login</button>
+          </form>
+          <div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"></script>
+        <!--signup end  -->
+
+
+        <script src="imageslider.js"></script>
+
+</body>
+
+</html>
